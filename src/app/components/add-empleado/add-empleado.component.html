@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <mat-toolbar color="primary">
+        <span>Registra Empleado</span>
+      </mat-toolbar>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-md-6">
+        <mat-label>Nombres</mat-label>
+        <input matInput [(ngModel)]="objEmpleado.nombres">
+      </mat-form-field>
+      <mat-form-field class="col-md-6">
+        <mat-label>Apellidos</mat-label>
+        <input matInput [(ngModel)]="objEmpleado.apellidos">
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field class="col-md-6">
+        <mat-label>Fecha Nacimiento</mat-label>
+        <input matInput [matDatepicker]="picker" [(ngModel)]="objEmpleado.fechaNacimiento" name="fechaNacimiento" 
+          placeholder="yyyy-MM-dd" autocomplete="off">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field class="col-md-6">
+        <mat-label>País</mat-label>
+        <mat-select [(ngModel)]="objEmpleado.pais!.idPais">
+          <mat-option value="-1"> [Seleccione] </mat-option>
+          <mat-option *ngFor="let x of lstPais" [value]="x.idPais">
+            {{x.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <button mat-raised-button type="submit" (click)="registra()" color="primary">Registra</button>
+    </div>
+  
+  </div> 

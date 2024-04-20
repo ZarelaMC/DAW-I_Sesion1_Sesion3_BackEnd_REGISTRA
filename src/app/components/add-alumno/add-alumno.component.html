@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <mat-toolbar color="primary" >    
+            <span>Registra Modalidad</span>    
+        </mat-toolbar> 
+    </div>
+    <div  class="row">
+        <mat-form-field class="col-md-4">
+          <mat-label>Nombre</mat-label>
+          <input  matInput  [(ngModel)] = "objModalidad.nombre"  >
+        </mat-form-field>
+        <mat-form-field class="col-md-4">
+          <mat-label>Número de Hombres</mat-label>
+          <input  matInput [(ngModel)] = "objModalidad.numHombres" >
+        </mat-form-field>
+        <mat-form-field class="col-md-4">
+          <mat-label>Número de Mujeres</mat-label>
+          <input  matInput [(ngModel)] = "objModalidad.numMujeres" >
+        </mat-form-field>
+    </div>   
+    <div  class="row">
+      <mat-form-field class="col-md-4">
+        <mat-label>Edad Mínima</mat-label>
+        <input  matInput  [(ngModel)] = "objModalidad.edadMinima" >
+      </mat-form-field>
+      <mat-form-field class="col-md-4">
+        <mat-label>Edad Máxima</mat-label>
+        <input  matInput [(ngModel)] = "objModalidad.edadMaxima">
+      </mat-form-field>
+      <mat-form-field class="col-md-4">
+        <mat-label>Sede</mat-label>
+        <input matInput  [(ngModel)] = "objModalidad.sede">
+      </mat-form-field>
+</div>
+<div  class="row">     
+      <mat-form-field class="col-md-4">
+        <mat-label>Deporte</mat-label>
+        <mat-select [(ngModel)] = "objModalidad.deporte!.idDeporte">
+          <mat-option value="-1"> [Seleccione] </mat-option>
+          <mat-option *ngFor="let x of lstDeportes" [value]="x.idDeporte">
+                    {{x.nombre}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field> 
+</div>           
+<div  class="row">
+      <button mat-raised-button type="submit" (click)="registra()" color="primary" >Registra</button>
+</div>
+    
+</div>

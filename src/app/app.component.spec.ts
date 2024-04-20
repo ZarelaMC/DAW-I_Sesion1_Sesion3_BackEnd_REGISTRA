@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'DAWI_Sesion3_FrontEnd_Angular_REGISTRA_' title`, () => {
+  it(`should have the 'DAWII-Sesion03Front' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('DAWI_Sesion3_FrontEnd_Angular_REGISTRA_');
+    expect(app.title).toEqual('DAWII-Sesion03Front');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, DAWI_Sesion3_FrontEnd_Angular_REGISTRA_');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, DAWII-Sesion03Front');
   });
 });

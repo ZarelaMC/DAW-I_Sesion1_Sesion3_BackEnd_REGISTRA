@@ -41,7 +41,8 @@ public class EmpleadoController {
 		 if (objSalida == null) {
 			 lstMensajes.add("Error en el registro empleado");
 		 }else {
-			 lstMensajes.add("Se registró el empleado de id : " + objSalida.getIdEmpleado());
+			 lstMensajes.add("Se registró al empleado: " + objSalida.getNombres() + " " + objSalida.getApellidos());
+			 lstMensajes.add("\nID asignado: " + objSalida.getIdEmpleado());
 		 }
 		return ResponseEntity.ok(lstMensajes);
 	}
